@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build:
+      dockerfile: ./Dockerfile
+    ports:
+      - 5174:5173
+    volumes:
+      - ./portfolio_apps:/portfolio_apps:cached
+      # バインドマウント
+      - portfolio_node_modules:/portfolio_apps/node_modules
+      # 名前付きボリュームでnode_modulesをバインドマウントの対象外に
+    entrypoint: /bin/sh
+    tty: true
+    stdin_open: true
+volumes:
+  portfolio_node_modules:
