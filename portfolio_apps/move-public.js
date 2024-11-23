@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const srcDir = path.join(__dirname, 'src/assets');
-const destDir = path.join(__dirname, 'dist/src/assets');
+const destDir = path.join(__dirname, 'dist/Portfolio/src/assets');
 
 fs.copy(srcDir, destDir, err => {
     if (err) {
