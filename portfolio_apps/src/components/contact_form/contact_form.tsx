@@ -19,7 +19,15 @@ const ContactForm = () => {
         message,
       };
       
-      await sendContactForm(data);
+      try {
+        await sendContactForm(data);
+        alert('メッセージを送信しました！');
+        if (nameRef.current) nameRef.current.value = '';
+        if (contactRef.current) contactRef.current.value = '';
+        if (messageRef.current) messageRef.current.value = '';
+      } catch (error) {
+        alert('メッセージの送信に失敗しました。');
+      }
     }
   };
 

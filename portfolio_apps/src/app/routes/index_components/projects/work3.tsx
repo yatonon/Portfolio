@@ -1,7 +1,7 @@
 export const project = {
     id: 3,
     title: "ゲーム向けプラットフォームアプリ開発",
-    imageUrl: "/src/assets/work3/work3_thumb.jpg",
+    imageUrl: "src/assets/work3/work3_thumb.jpg",
     description: "本開発は、ゲームプレイヤー向けの webアプリケーション、IOS,android 向けの naitive アプリ、そして LINE と Discord 向けの bot を作成しました。",
     overview: "本開発は、ゲームプレイヤー向けの webアプリケーション、IOS, android 向けの naitive アプリ、そして LINE と Discord 向けの bot を作成しました。ユーザーは, web, スマホアプリ, bot 等さまざまな方法を通じて本サービスに参加します。",
     technologies: ["React", "Python", "Django", "JavaScript", "GCP","Firebase"],

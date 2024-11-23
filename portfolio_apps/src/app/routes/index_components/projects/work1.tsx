@@ -1,7 +1,7 @@
 export const project = {
     id: 1,
     title: "建築業界向けプラットフォームアプリ開発",
-    imageUrl: "/src/assets/work1/work1_thumb.jpg",
+    imageUrl: "src/assets/work1/work1_thumb.jpg",
     description: "建築業界向けの大規模Webアプリケーションの開発に従事しました。会社としてスピード感のある開発を意識しており、アジャイルでかつチームをまたぐコミュニケーションを取り、様々な課題の解決に取り組みました。",
     overview: "建築業界向けの大規模Webアプリケーションの開発に従事しました。会社としてスピード感のある開発を意識しており、アジャイルでかつチームをまたぐコミュニケーションを取り、様々な課題の解決に取り組みました。",
     technologies: ["Ruby", "HTML", "CSS/SASS", "JavaScript", "Ruby on Rails", "Slim", "Sentry", "CircleCI", "RuboCop"],

@@ -1,7 +1,7 @@
 export const project = {
     id: 4,
     title: "医療診療ECサービス開発",
-    imageUrl: "/src/assets/work4/work4_thumb.jpg",
+    imageUrl: "src/assets/work4/work4_thumb.jpg",
     description: "4名の小規模なグループではありますがCTOとして、医療診療ECサービスの開発を行いました。患者は本アプリを通じて会員登録からweb受診予約、薬の購入から決済まですべて完結することができます。",
     overview: "病院と提携しCTOとして医療診療ECサービスを開発しました。要件定義から、基本設計、詳細設計、そしてテスト、本番環境の構築等すべてを担当し、またデザイン周りを特にコードのレビューを行いプロジェクトを完遂させました。",
     technologies: ["Ruby", "JavaScript", "ECS", "EKS", "RDS", "Kubernetes", "Route53", "CloudRun"],
