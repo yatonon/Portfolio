@@ -20,7 +20,7 @@ export const Profile = ({ profileData }: ProfileProps) => {
       <div className="">
         <div className="w-fit mx-auto">
           <img 
-            src="/src/assets/index/profile.png" 
+            src={`${import.meta.env.BASE_URL}src/assets/index/profile.png`}
             alt="profile" 
             className="rounded-2xl w-72 h-72 md:w-96 md:h-96 object-cover"
           />
