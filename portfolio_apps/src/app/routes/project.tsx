@@ -1,6 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+//ビルド時にバンドラに読み込ませるため明示的に記載
+const workProjects = import.meta.glob('./index_components/projects/work*.tsx');
+const selfworkProjects = import.meta.glob('./index_components/projects/selfwork*.tsx');
+
 export const WorkRoute = () => {
     const { work_id, selfwork_id } = useParams<{ work_id?: string; selfwork_id?: string }>();
     const [project, setProject] = useState<any>(null);
@@ -8,12 +12,12 @@ export const WorkRoute = () => {
     useEffect(() => {
         const loadProject = async () => {
             try {
-                if (work_id) {
-                    const projectModule = await import(`./index_components/projects/work${work_id}`);
-                    setProject(projectModule.project);
-                } else if (selfwork_id) {
-                    const projectModule = await import(`./index_components/projects/selfwork${selfwork_id}`);
-                    setProject(projectModule.project);
+                if (work_id && workProjects[`./index_components/projects/work${work_id}.tsx`]) {
+                    const projectModule = await workProjects[`./index_components/projects/work${work_id}.tsx`]();
+                    setProject((projectModule as any).project);
+                } else if (selfwork_id && selfworkProjects[`./index_components/projects/selfwork${selfwork_id}.tsx`]) {
+                    const projectModule = await selfworkProjects[`./index_components/projects/selfwork${selfwork_id}.tsx`]();
+                    setProject((projectModule as any).project);
                 }
             } catch (error) {
                 console.error('Failed to load project:', error);

@@ -24,7 +24,8 @@ const router = createBrowserRouter([
         return { Component: WorkRoute };
       },
     },
-  ],{
+  ],
+  {
     basename: '/Portfolio'
   }
 );
