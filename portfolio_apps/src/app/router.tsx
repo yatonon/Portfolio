@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter, BrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { paths } from '@/config/paths';
 
 
@@ -24,29 +24,13 @@ const router = createBrowserRouter([
         return { Component: WorkRoute };
       },
     },
-    // {
-    //   path: paths.article.path,
-    //   lazy: async () => {
-    //     const { ArticleRoute } = await import('./routes/article');
-    //     return { Component: ArticleRoute };
-    //   },
-    // },
-    // {
-    //   path: '*',
-    //   lazy: async () => {
-    //     const { NotFoundRoute } = await import('./routes/not-found');
-    //     return {
-    //       Component: NotFoundRoute,
-    //     };
-    //   },
-    // },
-  ],
+  ],{
+    basename: '/Portfolio'
+  }
 );
 
 export const AppRouter = () => {
   return (
-    <BrowserRouter>
-      <RouterProvider router={router} />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   );
 };
