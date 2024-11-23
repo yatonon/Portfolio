@@ -21,7 +21,7 @@ const WorkSection = (props: WorkSectionProps) => {
           <div key={project.id} className="space-y-4 p-4 border rounded-lg shadow-md flex flex-col justify-between">
             <div>
               <div className="text-xl font-semibold">{project.title}</div>
-              <img src={project.imageUrl} alt="Project_Thumbnail" className="w-full h-88 rounded border-2 border-black" />
+              <img src={`${import.meta.env.BASE_URL}${project.imageUrl}`} alt="Project_Thumbnail" className="w-full h-88 rounded border-2 border-black" />
               <div className="text-gray-700">{project.description}</div>
             </div>
             <div>

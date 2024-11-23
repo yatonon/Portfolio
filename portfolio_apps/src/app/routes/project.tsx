@@ -37,7 +37,7 @@ export const WorkRoute = () => {
                         return isImgTag ? (
                             <img
                                 key={imgIndex}
-                                src={imgLine.match(/src="([^"]+)"/)?.[1]}
+                                src={`${import.meta.env.BASE_URL}${imgLine.match(/src="([^"]+)"/)?.[1]}`}
                                 alt={imgLine.match(/alt="([^"]*)"/)?.[1] || ''}
                                 className={imgLine.match(/className="([^"]*)"/)?.[1] || ''}
                             />
@@ -66,7 +66,7 @@ export const WorkRoute = () => {
         <div className="w-full p-6 pt-20 pb-20 bg-white">
             <div className="md:p-4">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6">{project.title}</h1>
-                <img src={project.imageUrl} alt="Project image" className="w-full  rounded" />
+                <img src={`${import.meta.env.BASE_URL}${project.imageUrl}`} alt="Project image" className="w-full  rounded" />
                 <h2 className="text-2xl font-bold m-4">概要</h2>
                 <p className="mb-8">{project.overview}</p>
                 <h2 className="text-2xl font-bold mb-4">主な使用言語等</h2>
