@@ -1,2 +1,2 @@
-二重送信防止
+githubpages の 特徴の index.html を踏ませる処理をなんとか
 リファクタリング

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { sendContactForm } from '@/features/index/contact';
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);

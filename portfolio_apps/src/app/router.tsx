@@ -26,6 +26,14 @@ const router = createBrowserRouter(
         return { Component: WorkRoute };
       },
     },
+    // 不明なパスの場合はホームにリダイレクト
+    {
+      path: '*',
+      lazy: async () => {
+        const { HomeRoute } = await import('./routes/index');
+        return { Component: HomeRoute };
+      },
+    },
   ],
   {
     basename,
