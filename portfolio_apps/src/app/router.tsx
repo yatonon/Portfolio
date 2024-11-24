@@ -1,8 +1,10 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { paths } from '@/config/paths';
 
+const basename = import.meta.env.MODE === 'production' ? import.meta.env.BASE_URL : undefined;
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
     {
       path: paths.home.path,
       lazy: async () => {
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
     },
   ],
   {
-    basename: '/Portfolio'
+    basename,
   }
 );
 
