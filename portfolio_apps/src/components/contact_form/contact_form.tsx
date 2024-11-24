@@ -1,13 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { sendContactForm } from '@/features/index/contact';
 
 const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const nameRef = useRef<HTMLInputElement>(null);
   const contactRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     const name = nameRef.current?.value;
     const contact = contactRef.current?.value;
     const message = messageRef.current?.value;
@@ -18,15 +21,18 @@ const ContactForm = () => {
         contact,
         message,
       };
-      
+
+      setIsSubmitting(true);
       try {
-        await sendContactForm(data);
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         alert('メッセージを送信しました！');
         if (nameRef.current) nameRef.current.value = '';
         if (contactRef.current) contactRef.current.value = '';
         if (messageRef.current) messageRef.current.value = '';
       } catch (error) {
         alert('メッセージの送信に失敗しました。');
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
@@ -76,8 +82,9 @@ const ContactForm = () => {
           <button
             type="submit"
             className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-bold"
+            disabled={isSubmitting}
           >
-            送信
+            {isSubmitting ? '送信中...' : '送信'}
           </button>
         </div>
       </form>
