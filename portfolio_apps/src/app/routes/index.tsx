@@ -4,8 +4,9 @@ import { paths } from '@/config/paths';
 import { Title } from '@/components/title';
 import { Header } from '@/components/header';
 import { ContactForm } from '@/components/contact_form';
-import { WorkSection } from './index_components/worksection';
+
 import { Profile } from './index_components/Profile';
+import { WorkSection } from './index_components/Worksection';
 
 import { projectSummary as work1 } from './index_components/projects/work1';
 import { projectSummary as work2 } from './index_components/projects/work2';
@@ -82,25 +83,25 @@ export const HomeRoute = () => {
         </div>
       </div>
       {/* 組織開発 */}
-      <div className="w-full p-6 pt-20 md:pb-20">
+      <div className="w-full p-6 pt-20 lg:px-40">
         <div className="md:p-4">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center md:pb-20">
             {headerContentsData[1]}
           </h2>
           <WorkSection handleNavigation={handleNavigation} projects={works} />
         </div>
       </div>
       {/* 個人開発 */}
-      <div className="w-full p-6 pt-20 md:pb-20">
+      <div className="w-full p-6 pt-20 lg:px-40">
         <div className="md:p-4">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center md:pb-20">
             {headerContentsData[2]}
           </h2>
           <WorkSection handleNavigation={handleSelfworkNavigation} projects={selfworks} />
         </div>
       </div>
       {/* 問い合わせ */}
-      <div className="bg-black w-full p-6 pt-20 md:pb-20">
+      <div className="bg-black w-full p-6 pt-20 lg:px-40">
         <div className="md:p-4 text-white">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
             {headerContentsData[3]}
