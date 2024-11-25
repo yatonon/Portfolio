@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { sendContactForm } from '@/features/index/contact';
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,7 +24,7 @@ const ContactForm = () => {
 
       setIsSubmitting(true);
       try {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await sendContactForm(data);
         alert('メッセージを送信しました！');
         if (nameRef.current) nameRef.current.value = '';
         if (contactRef.current) contactRef.current.value = '';
